@@ -1,0 +1,80 @@
+
+/* Estilos para el sidebar */
+.sidebar {
+    position: sticky;
+    top: 0; /* Altura del header */
+    left: 0;
+    height: calc(100vh - 56px); /* Altura total menos el header */
+    background-color: #f8f9fa; /* Fondo */
+    border-right: 1px solid #dee2e6; /* Línea divisoria */
+    overflow-y: auto; /* Desplazamiento si es necesario */
+    padding-top: 1rem;
+    height: 100vh;
+    grid-column: 1; /* Primera columna */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 10px 20px;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.sidebar li:hover {
+    background-color: #e9ecef; /* Fondo al pasar el mouse */
+    border-radius: 25px; /* Forma ovalada al pasar el mouse */
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #212529; /* Color del texto */
+    display: flex;
+    align-items: center;
+    border-radius: 25px; /* Forma ovalada */
+    padding: 10px; /* Espaciado interno */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.sidebar a.active,
+.sidebar li:hover > a {
+    background-color: #0d6dfd; /* Color de fondo del elemento activo */
+    color: white; /* Color del texto activo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Separación entre el icono y el texto */
+}
+
+
+
+/* Estilo general para enlaces del menú hamburguesa */
+.navbar-nav.d-lg-none a {
+    color: #000; /* Cambia el color del texto a negro */
+    text-decoration: none; /* Elimina la línea subrayada */
+    display: flex; /* Asegura que íconos y texto estén alineados */
+    align-items: center;
+    padding: 10px 15px; /* Agrega espaciado entre los elementos */
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    border-bottom: 1px solid #ddd; /* Agrega un separador sutil entre opciones */
+}
+
+.navbar-nav.d-lg-none a:hover {
+    background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
+    text-decoration: none; /* Asegura que no aparezca el subrayado al hacer hover */
+}
+
+/* Espaciado entre íconos y texto */
+.navbar-nav.d-lg-none i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+/* Último ítem sin borde inferior */
+.navbar-nav.d-lg-none a:last-child {
+    border-bottom: none;
+}

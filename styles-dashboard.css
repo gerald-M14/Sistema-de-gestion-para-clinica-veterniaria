@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Caprasimo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@200;300&family=Lexend+Deca:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,900;1,300;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(236, 236, 236);
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+header{
+    position: sticky;
+    -webkit-box-shadow: 0px 10px 13px -9px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 10px 13px -9px rgba(0,0,0,0.52);
+    box-shadow: 0px 10px 13px -9px rgba(0,0,0,0.52);
+}
+/* Header */
+.logo-header {
+    width: 12rem;
+    padding-right: 2rem;
+}
+/* Contenedor del layout con grid */
+.contenido {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 6 columnas iguales */
+    grid-auto-rows: minmax(150x, auto); /* Flexible rows, auto for row 1,2 and 6 */
+    gap: 1rem; /* Espaciado entre celdas */
+    padding: 16px; /* Espaciado interno del contenedor */
+    height: 100vh; /* Abarcar toda la altura disponible */
+    overflow: auto;
+    margin-bottom: 2rem;
+}
+
+.logout-container {
+    position: absolute; /* Ajusta según la estructura de tu página */
+    top: 20px;
+    right: 20px;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+
+/* Estilos para el sidebar */
+.sidebar {
+    position: sticky;
+    top: 0; /* Altura del header */
+    left: 0;
+    height: calc(100vh - 56px); /* Altura total menos el header */
+    background-color: #f8f9fa; /* Fondo */
+    border-right: 1px solid #dee2e6; /* Línea divisoria */
+    overflow-y: auto; /* Desplazamiento si es necesario */
+    padding-top: 1rem;
+    height: 100vh;
+    grid-row: 1 / span 7; /* Ocupa las filas 1 a 7 */
+    grid-column: 1; /* Primera columna */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 10px 20px;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.sidebar li:hover {
+    background-color: #e9ecef; /* Fondo al pasar el mouse */
+    border-radius: 25px; /* Forma ovalada al pasar el mouse */
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #212529; /* Color del texto */
+    display: flex;
+    align-items: center;
+    border-radius: 25px; /* Forma ovalada */
+    padding: 10px; /* Espaciado interno */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.sidebar a.active,
+.sidebar li:hover > a {
+    background-color: #0d6dfd; /* Color de fondo del elemento activo */
+    color: white; /* Color del texto activo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.sidebar a i {
+    margin-right: 10px; /* Separación entre el icono y el texto */
+}
+
+
+
+/* Estilo general para enlaces del menú hamburguesa */
+.navbar-nav.d-lg-none a {
+    color: #000; /* Cambia el color del texto a negro */
+    text-decoration: none; /* Elimina la línea subrayada */
+    display: flex; /* Asegura que íconos y texto estén alineados */
+    align-items: center;
+    padding: 10px 15px; /* Agrega espaciado entre los elementos */
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    border-bottom: 1px solid #ddd; /* Agrega un separador sutil entre opciones */
+}
+
+.navbar-nav.d-lg-none a:hover {
+    background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
+    text-decoration: none; /* Asegura que no aparezca el subrayado al hacer hover */
+}
+
+/* Espaciado entre íconos y texto */
+.navbar-nav.d-lg-none i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+/* Último ítem sin borde inferior */
+.navbar-nav.d-lg-none a:last-child {
+    border-bottom: none;
+}
+
+/* Estilos específicos para los elementos del grid */
+
+.articulos {
+    grid-column: 2 / span 1; /* Segunda columna */
+    grid-row: 1 / span 1; /* Primera fila */
+    background-color: #ffffff; /* Color de fondo para identificar */
+    
+}
+
+.Total-Mascotas {
+    grid-column: 3 / span 1; /* Tercera columna */
+    grid-row: 1 / span 1; /* Primera fila */
+    background-color: #ffffff; /* Color de fondo para identificar */
+    
+}
+
+.total-productos {
+    grid-column: 4 / span 1; /* Cuarta columna */
+    grid-row: 1 / span 1; /* Primera fila */
+    background-color: #ffffff; /* Color de fondo para identificar */
+}
+
+.total-clientes {
+    grid-column: 5 / span 1; /* Quinta columna */
+    grid-row: 1 / span 1; /* Primera fila */
+    background-color: #fffffffd; /* Color de fondo para identificar */
+}
+.articulos, .Total-Mascotas, .total-productos, .total-clientes{
+    padding: 1rem;
+    -webkit-box-shadow: 2px 12px 36px -11px rgba(0,0,0,0.63);
+    -moz-box-shadow: 2px 12px 36px -11px rgba(0,0,0,0.63);
+    box-shadow: 2px 12px 36px -11px rgba(0,0,0,0.63);
+}
+
+.articulos i, .Total-Mascotas i, .total-productos i, .total-clientes i{
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    color: #0d6dfd;
+} 
+
+.articulos h2, .Total-Mascotas h2, .total-productos h2, .total-clientes h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+} 
+
+
+.grafica {
+    grid-column: 2 / span 4; /* Ocupa de la columna 2 a la 6 */
+    grid-row: 2 / span 3; /* Ocupa las filas 2 a 4 */
+    background-color: #ffffff; /* Color de fondo para identificar */
+    display: flex; /* Centrar el canvas */
+    justify-content: space-between; /* Alinea la explicación y la gráfica */
+    align-items: flex-start; /* Alinea los elementos al principio */
+    gap: 0.5rem; /* Espacio entre los elementos */
+    padding: 1rem;
+    min-height: 0; /* Permite que el contenedor se ajuste dinámicamente */
+    width: 100%; /* Asegura que el contenedor no se desborde */
+    max-width: 100%; /* Asegura que el contenedor no se haga más grande */
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+    flex-wrap: wrap; /* Permite que los elementos se reorganizen */
+    height: 20rem;
+}
+
+.explicacion {
+    max-width: 19rem; /* Limita el ancho del texto */
+    flex-shrink: 0; /* Evita que el texto se encoja */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.explicacion h2 {
+    padding-bottom: 1rem;
+}
+
+canvas {
+    flex-grow: 1; /* El canvas crece para llenar el espacio disponible */
+    width: 100%; /* El canvas ocupará el 100% del ancho disponible */
+    height: 300px; /* Establece una altura predeterminada */
+    max-width: 100%; /* Evita que el canvas se haga más grande que el contenedor */
+    min-height: 0; /* Permite que la altura del canvas se ajuste al contenedor */
+}
+
+
+
+.urgencias {
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 3;
+    background-color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+.urgencias-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;  /* Asegura que el contenedor tenga una altura definida */
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    padding-right: 2rem;
+    padding-top: 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;  /* Impide que el contenido se desborde */
+    
+}
+
+/* Estilo de la tabla de urgencias */
+.urgencias th, .urgencias td {
+    
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.urgencias td {
+    background-color: #fafafa;
+}
+
+/* Estilo del botón al final */
+.agregar-urgencia {
+    background-color: #4CAF50;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    margin-right: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;  /* Asegura que esté por encima de otros elementos */
+    margin-top: 1rem; /* Un pequeño margen superior para separar del contenido */
+    align-self: flex-end;  /* Ubica el botón al final del contenedor */
+    margin-bottom: 0;  /* Asegura que el botón no se salga */
+    max-width: 100%;  /* Asegura que el botón no exceda el ancho del contenedor */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    
+    
+}
+
+.agregar-urgencia:hover {
+    background-color: #f73a21;
+}
+
+
+
+
+
+
+#clientesChart {
+    width: 100%; /* El canvas ocupa el 100% del contenedor */
+    height: 100%; /* El canvas ocupa el 100% del contenedor */
+}
+
+.citas {
+    grid-column: 4 / span 3;
+    grid-row: 5 / span 3; /* Esto asegura que ambas tablas estén en la misma fila */
+    background-color: #ffffff;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    padding-right: 1rem; 
+    height: 25rem;
+    overflow: visible;
+    
+}
+
+/* Tabla */
+.citas table, .urgencias table {
+    
+    width: 100%; /* Ensures table fills the available width */
+    border-collapse: collapse;
+    
+}
+
+.citas table {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.urgencias table{
+    margin-top: 0.5rem;
+}
+
+.citas th, .citas td, .urgencias th, .urgencias td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.citas th, .urgencias th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.citas td, .urgencias td {
+    background-color: #fafafa;
+}
+
+
+
+/* Ajuste para alinear el contenido de "status" */
+.status {
+    text-align: left;
+}
+
+.status i {
+    margin-right: 0.3rem; /* Ajusta el margen entre el ícono y el texto */
+}
+
+/* Iconos de estatus */
+.estatus-confirmada {
+    color: green;
+}
+
+.estatus-espera {
+    color: orange;
+}
+
+.estatus-cancelada {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+     /* Elementos principales se apilan verticalmente */
+
+    .sidebar {
+        display: none; /* Oculta el sidebar */
+    }
+    .articulos, .Total-Mascotas, .total-productos, .total-clientes, .grafica, .urgencias, .citas {
+        grid-column: 1 / -1; /* Ocupa todo el ancho */
+        grid-row: auto; /* Permite que los elementos se ordenen en filas automáticamente */
+    }
+
+    /* Ajustar espaciado y márgenes */
+    .articulos, .Total-Mascotas, .total-productos, .total-clientes {
+        margin-bottom: 1rem; /* Espacio entre los elementos */
+    }
+
+    .grafica, .urgencias, .citas {
+        margin-top: 1rem;
+    }
+
+    /* Asegura que las tablas y gráficos no se desborden */
+    .grafica canvas, .urgencias table, .citas table {
+        width: 100%; /* Ajusta el ancho al contenedor */
+    }
+    .grafica {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        height: 490px; /* Ajusta la altura del contenedor según el contenido */
+    }
+
+    .explicacion {
+        max-width: none; /* Permite que el texto ocupe todo el ancho disponible */
+        text-align: center; /* Centra el texto */
+    }
+
+}

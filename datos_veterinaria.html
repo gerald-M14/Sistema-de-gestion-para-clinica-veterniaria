@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Veterinarias</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Veterinarias</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Incluir la lógica PHP aquí
+                require_once 'consulta_veterinaria.php';
+
+                if (!empty($veterinarias)) {
+                    foreach ($veterinarias as $veterinaria) {
+                        echo "<tr>";
+                        echo "<td>{$veterinaria['ID_VETERINARIA']}</td>";
+                        echo "<td>{$veterinaria['NOMBRE']}</td>";
+                        echo "<td>{$veterinaria['CORREO']}</td>";
+                        echo "<td>{$veterinaria['TELEFONO']}</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>No hay datos disponibles</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
